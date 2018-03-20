@@ -442,7 +442,7 @@ The CPU time used by the virtual guest, in nanoseconds.
  *
  *
  * Its syntax is COUNTER64 (based on perltype COUNTER64)
- * The net-snmp type is ASN_COUNTER64. The C type decl is U64 (U64)
+ * The net-snmp type is ASN_COUNTER64. The C type decl is U64 (struct counter64)
  */
 /**
  * Extract the current value of the libvirtGuestCpuTime data.
@@ -459,7 +459,7 @@ The CPU time used by the virtual guest, in nanoseconds.
  * @retval MFD_ERROR           : Any other error
  */
 int
-libvirtGuestCpuTime_get( libvirtGuestTable_rowreq_ctx *rowreq_ctx, U64 * libvirtGuestCpuTime_val_ptr )
+libvirtGuestCpuTime_get( libvirtGuestTable_rowreq_ctx *rowreq_ctx, struct counter64 * libvirtGuestCpuTime_val_ptr )
 {
    /** we should have a non-NULL pointer */
    netsnmp_assert( NULL != libvirtGuestCpuTime_val_ptr );
